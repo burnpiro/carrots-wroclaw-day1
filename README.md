@@ -1,7 +1,5 @@
-# Hard Events to follow
+# Geek Girls Carrots Wroclaw Day 1
 
-### A modern guide to Events in JavaScript
+### Javascript Workshop
 
-> How Events are propagating through DOM elements? Is there a way to use it to our advantage?
-
-Presentation available here [https://burnpiro.github.io/hard-events-to-follow/#/](https://burnpiro.github.io/hard-events-to-follow/#/)
+Presentation available here [https://burnpiro.github.io/carrots-wroclaw-day1/#/](https://burnpiro.github.io/carrots-wroclaw-day1/#/)
