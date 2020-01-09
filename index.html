@@ -17,7 +17,7 @@
   <link rel="stylesheet" href="css/custom.css">
 
   <!-- Theme used for syntax highlighting of code -->
-  <link rel="stylesheet" href="lib/css/an-old-hope.css">
+  <link rel="stylesheet" href="lib/css/github-light.css">
 
   <!-- Printing and PDF exports -->
   <script>
@@ -37,7 +37,7 @@
   <div class="slides">
     <section>
       <h2>JS Heroes Workshop</h2>
-      <img src="assets/carrot.png" style="max-width: 60%; max-height: 50vh;" class="plain">
+      <img src="assets/carrot.png" style="max-width: 60%; max-height: 40vh;" class="plain">
       <p>
         Dzień 1 - Javascript wprowadzenie
       <p>
@@ -71,7 +71,7 @@
       <div style="
   display:grid;
   grid-template-columns: 33% 33% 33%;
-  grid-row: auto auto;
+  grid-row: auto;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   justify-items: center;
@@ -84,6 +84,130 @@
         <img src="assets/webvr.png" style="max-height: 20vh;" class="plain">
         <img src="assets/webanimation.png" style="max-height: 20vh;" class="plain">
       </div>
+    </section>
+    <section>
+      <p>Interakcje użytkownika z twoją aplikacją</p>
+      <img src="assets/poke-poke.gif" style="max-height: 60vh;" class="plain">
+    </section>
+    <section>
+      <img src="assets/dom-tree.png" style="max-height: 60vh;" class="plain">
+      <pre><code class="hljs html" data-trim style="word-wrap: break-word;">
+<div id="container">
+  <div id="dataContainer">
+    <div id="clickedData"></div>
+  </div>
+  <button id="dataSubmitter">Add Data</button>
+</div>
+					</code></pre>
+    </section>
+    <section>
+      <h3>Event</h3>
+      <pre><code class="hljs java" data-trim data-line-numbers="2,4-6,11-12,14" style="word-wrap: break-word;">interface Event {
+  constructor(DOMString type, optional EventInit eventInitDict = {});
+
+  void stopPropagation();
+  void stopImmediatePropagation();
+  void preventDefault();
+
+  readonly attribute DOMString type;
+  readonly attribute EventTarget? target;
+  readonly attribute EventTarget? currentTarget;
+  readonly attribute unsigned short eventPhase;
+  readonly attribute boolean bubbles;
+  readonly attribute boolean cancelable;
+  readonly attribute boolean defaultPrevented;
+  readonly attribute boolean composed;
+}
+					</code></pre>
+    </section>
+    <section>
+      <h3>Event Listener</h3>
+      <img src="assets/event-listener-list-bubble.png" class="plain">
+      <aside class="notes">
+      </aside>
+    </section>
+    <section>
+      <h3>Bubble Event</h3>
+      <img src="assets/bubble-events.gif" class="plain">
+      <aside class="notes">
+      </aside>
+    </section>
+    <section>
+      <h3>Jak Event faktycznie działa</h3>
+      <img src="assets/bubble-capture.gif" class="plain">
+      <aside class="notes">
+      </aside>
+    </section>
+    <section>
+      <h3>Jak stworzyć Event Listener?</h3>
+      <pre><code class="hljs java" data-trim data-line-numbers="1,4-6" style="word-wrap: break-word;">
+  void addEventListener(string type, function callback, options = {});
+					</code></pre>
+      <pre class="fragment"><code class="hljs javascript" data-trim style="word-wrap: break-word;">
+const button = document.getElementById('dataSubmitter');
+
+button.addEventListener('click', e => {
+  console.log('clicked');
+});
+button.addEventListener('click', e => {
+  console.log('clicked second');
+});
+					</code></pre>
+      <aside class="notes">
+      </aside>
+    </section>
+    <section>
+      <h3>Jak wyciągać informacje od użytkownika?</h3>
+      <pre><code class="hljs html" data-trim style="word-wrap: break-word;">
+        <button
+          id="dataSubmitter"
+          data-time="20"
+          class="timer__button">
+          20 Secs
+        </button>
+					</code></pre>
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;">
+const button = document.getElementById('dataSubmitter');
+
+button.addEventListener('click', e => {
+  console.log(e.target.className);
+  console.log(e.target.dataset.time);
+});
+					</code></pre>
+      <aside class="notes">
+      </aside>
+    </section>
+    <section>
+      <h3>Dobrze, ale co z formularzami?</h3>
+      <pre><code class="hljs html" data-trim style="word-wrap: break-word;">
+        <form name="myForm">
+          <input  type="text" name="firstName" />
+          <input  type="text" name="lastName" />
+          <input  type="text" name="address" />
+
+          <button
+            type="submit">
+            Wyślij formularz
+          </button>
+        </form>
+					</code></pre>
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;">
+document.myForm.addEventListener('submit', e => {
+  e.preventDefault();
+  e.stopPropagation();
+  console.log(e.target.elements["firstName"]);
+  console.log(e.target.elements["lastName"]);
+  console.log(e.target.elements["address"]);
+});
+					</code></pre>
+      <aside class="notes">
+      </aside>
+    </section>
+    <section>
+      <h3>Jak Event faktycznie działa</h3>
+      <img src="assets/stop-propagation.gif" class="plain">
+      <aside class="notes">
+      </aside>
     </section>
     <section>
       <h2>Thanks</h2>
