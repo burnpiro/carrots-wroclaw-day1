@@ -336,9 +336,504 @@ Uncaught SyntaxError: Unexpected token u in JSON at position 0
     <section>
       <img src="assets/vegas.png" class="plain">
     </section>
+    <section data-transition="none">
+      <h3>Zmienne / "Stałe"</h3>
+      <pre class="fragment"><code class="hljs javascript" data-trim style="word-wrap: break-word;">
+let myHeight = 50
+
+myHeight = 150
+					</code></pre>
+      <pre class="fragment"><code class="hljs javascript" data-trim style="word-wrap: break-word;">
+const myHeight = 50
+
+myHeight = 150 //Uncaught TypeError: Assignment to constant variable.
+					</code></pre>
+    </section>
+    <section data-transition="none">
+      <h3>Niechciany "var"</h3>
+      <img src="assets/let-var.png" class="plain" style="max-height: 60vh;">
+    </section>
+    <section data-transition="none">
+      <h3>Scope</h3>
+      <img src="assets/scopes.png" class="plain" style="max-height: 60vh;">
+    </section>
+    <section data-transition="none">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;" data-line-numbers>
+let topScope = `I'm Sitting on Top of the World`;
+
+function main() {
+  // First level scope
+  const innerData = "Some internal data I want to keep for myself";
+
+  function doStaff(innerData = "Different Data") {
+    // Second level scope
+
+    let myStaff = `can't touch this`;
+
+    console.log(innerData);
+    console.log(topScope);
+  }
+
+  function doSthElse() {
+    // Second level scope
+    console.log(innerData);
+  }
+
+  doStaff();
+  doSthElse();
+}
+
+main();
+console.log(myStaff); // ReferenceError: myStaff is not defined
+					</code></pre>
+    </section>
+    <section data-transition="none">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;" data-line-numbers="1">
+let topScope = `I'm Sitting on Top of the World`;
+
+function main() {
+  // First level scope
+  const innerData = "Some internal data I want to keep for myself";
+
+  function doStaff(innerData = "Different Data") {
+    // Second level scope
+
+    let myStaff = `can't touch this`;
+
+    console.log(innerData);
+    console.log(topScope);
+  }
+
+  function doSthElse() {
+    // Second level scope
+    console.log(innerData);
+  }
+
+  doStaff();
+  doSthElse();
+}
+
+main();
+console.log(myStaff); // ReferenceError: myStaff is not defined
+					</code></pre>
+    </section>
+    <section data-transition="none">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;" data-line-numbers="3,23,25">
+let topScope = `I'm Sitting on Top of the World`;
+
+function main() {
+  // First level scope
+  const innerData = "Some internal data I want to keep for myself";
+
+  function doStaff(innerData = "Different Data") {
+    // Second level scope
+
+    let myStaff = `can't touch this`;
+
+    console.log(innerData);
+    console.log(topScope);
+  }
+
+  function doSthElse() {
+    // Second level scope
+    console.log(innerData);
+  }
+
+  doStaff();
+  doSthElse();
+}
+
+main();
+console.log(myStaff); // ReferenceError: myStaff is not defined
+					</code></pre>
+    </section>
+    <section data-transition="none">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;" data-line-numbers="4,5">
+let topScope = `I'm Sitting on Top of the World`;
+
+function main() {
+  // First level scope
+  const innerData = "Some internal data I want to keep for myself";
+
+  function doStaff(innerData = "Different Data") {
+    // Second level scope
+
+    let myStaff = `can't touch this`;
+
+    console.log(innerData);
+    console.log(topScope);
+  }
+
+  function doSthElse() {
+    // Second level scope
+    console.log(innerData);
+  }
+
+  doStaff();
+  doSthElse();
+}
+
+main();
+console.log(myStaff); // ReferenceError: myStaff is not defined
+					</code></pre>
+    </section>
+    <section data-transition="none">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;" data-line-numbers="7,16,21,22">
+let topScope = `I'm Sitting on Top of the World`;
+
+function main() {
+  // First level scope
+  const innerData = "Some internal data I want to keep for myself";
+
+  function doStaff(innerData = "Different Data") {
+    // Second level scope
+
+    let myStaff = `can't touch this`;
+
+    console.log(innerData);
+    console.log(topScope);
+  }
+
+  function doSthElse() {
+    // Second level scope
+    console.log(innerData);
+  }
+
+  doStaff();
+  doSthElse();
+}
+
+main();
+console.log(myStaff); // ReferenceError: myStaff is not defined
+					</code></pre>
+    </section>
+    <section data-transition="none">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;" data-line-numbers="7,14">
+let topScope = `I'm Sitting on Top of the World`;
+
+function main() {
+  // First level scope
+  const innerData = "Some internal data I want to keep for myself";
+
+  function doStaff(innerData = "Different Data") {
+    // Second level scope
+
+    let myStaff = `can't touch this`;
+
+    console.log(innerData);
+    console.log(topScope);
+  }
+
+  function doSthElse() {
+    // Second level scope
+    console.log(innerData);
+  }
+
+  doStaff();
+  doSthElse();
+}
+
+main();
+console.log(myStaff); // ReferenceError: myStaff is not defined
+					</code></pre>
+    </section>
+    <section data-transition="none">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;" data-line-numbers="8,10">
+let topScope = `I'm Sitting on Top of the World`;
+
+function main() {
+  // First level scope
+  const innerData = "Some internal data I want to keep for myself";
+
+  function doStaff(innerData = "Different Data") {
+    // Second level scope
+
+    let myStaff = `can't touch this`;
+
+    console.log(innerData);
+    console.log(topScope);
+  }
+
+  function doSthElse() {
+    // Second level scope
+    console.log(innerData);
+  }
+
+  doStaff();
+  doSthElse();
+}
+
+main();
+console.log(myStaff); // ReferenceError: myStaff is not defined
+					</code></pre>
+    </section>
+    <section data-transition="none">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;" data-line-numbers="12,13">
+let topScope = `I'm Sitting on Top of the World`;
+
+function main() {
+  // First level scope
+  const innerData = "Some internal data I want to keep for myself";
+
+  function doStaff(innerData = "Different Data") {
+    // Second level scope
+
+    let myStaff = `can't touch this`;
+
+    console.log(innerData); // "Different Data"
+    console.log(topScope); // `I'm Sitting on Top of the World`
+  }
+
+  function doSthElse() {
+    // Second level scope
+    console.log(innerData);
+  }
+
+  doStaff();
+  doSthElse();
+}
+
+main();
+console.log(myStaff); // ReferenceError: myStaff is not defined
+					</code></pre>
+    </section>
+    <section data-transition="none">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;" data-line-numbers="16,19">
+let topScope = `I'm Sitting on Top of the World`;
+
+function main() {
+  // First level scope
+  const innerData = "Some internal data I want to keep for myself";
+
+  function doStaff(innerData = "Different Data") {
+    // Second level scope
+
+    let myStaff = `can't touch this`;
+
+    console.log(innerData);
+    console.log(topScope);
+  }
+
+  function doSthElse() {
+    // Second level scope
+    console.log(innerData);
+  }
+
+  doStaff();
+  doSthElse();
+}
+
+main();
+console.log(myStaff); // ReferenceError: myStaff is not defined
+					</code></pre>
+    </section>
+    <section data-transition="none">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;" data-line-numbers="17,18">
+let topScope = `I'm Sitting on Top of the World`;
+
+function main() {
+  // First level scope
+  const innerData = "Some internal data I want to keep for myself";
+
+  function doStaff(innerData = "Different Data") {
+    // Second level scope
+
+    let myStaff = `can't touch this`;
+
+    console.log(innerData);
+    console.log(topScope);
+  }
+
+  function doSthElse() {
+    // Second level scope
+    console.log(innerData); // "Some internal data I want to keep for myself"
+  }
+
+  doStaff();
+  doSthElse();
+}
+
+main();
+console.log(myStaff); // ReferenceError: myStaff is not defined
+					</code></pre>
+    </section>
+    <section data-transition="none">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;" data-line-numbers="10,26">
+let topScope = `I'm Sitting on Top of the World`;
+
+function main() {
+  // First level scope
+  const innerData = "Some internal data I want to keep for myself";
+
+  function doStaff(innerData = "Different Data") {
+    // Second level scope
+
+    let myStaff = `can't touch this`;
+
+    console.log(innerData);
+    console.log(topScope);
+  }
+
+  function doSthElse() {
+    // Second level scope
+    console.log(innerData);
+  }
+
+  doStaff();
+  doSthElse();
+}
+
+main();
+console.log(myStaff); // ReferenceError: myStaff is not defined
+					</code></pre>
+    </section>
+    <section data-transition="none">
+      <h3>Closure</h3>
+      <img src="assets/closure.png" class="plain" style="max-height: 60vh;">
+    </section>
+    <section data-transition="none">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;" data-line-numbers="7,15">
+let topScope = `I'm Sitting on Top of the World`;
+
+function main() {
+  // First level scope
+  const innerData = "Some internal data I want to keep for myself";
+
+  function doStaff() {
+    // Second level scope
+
+    let myStaff = `can't touch this`;
+
+    console.log(innerData);
+    console.log(myStaff);
+    console.log(topScope);
+  }
+
+  return {
+    doStaff
+  };
+}
+
+const myClousure = main();
+myClousure.doStaff();
+console.log(myStaff); // ReferenceError: myStaff is not defined
+					</code></pre>
+    </section>
+    <section data-transition="none">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;" data-line-numbers="17-19">
+let topScope = `I'm Sitting on Top of the World`;
+
+function main() {
+  // First level scope
+  const innerData = "Some internal data I want to keep for myself";
+
+  function doStaff() {
+    // Second level scope
+
+    let myStaff = `can't touch this`;
+
+    console.log(innerData);
+    console.log(myStaff);
+    console.log(topScope);
+  }
+
+  return {
+    doStaff
+  };
+}
+
+const myClousure = main();
+myClousure.doStaff();
+console.log(myStaff); // ReferenceError: myStaff is not defined
+					</code></pre>
+    </section>
+    <section data-transition="none">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;" data-line-numbers="22,23">
+let topScope = `I'm Sitting on Top of the World`;
+
+function main() {
+  // First level scope
+  const innerData = "Some internal data I want to keep for myself";
+
+  function doStaff() {
+    // Second level scope
+
+    let myStaff = `can't touch this`;
+
+    console.log(innerData);
+    console.log(myStaff);
+    console.log(topScope);
+  }
+
+  return {
+    doStaff
+  };
+}
+
+const myClousure = main();
+myClousure.doStaff();
+console.log(myStaff); // ReferenceError: myStaff is not defined
+					</code></pre>
+    </section>
+    <section data-transition="none">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;" data-line-numbers="1,5,8-14">
+let topScope = `I'm Sitting on Top of the World`;
+
+function main() {
+  // First level scope
+  const innerData = "Some internal data I want to keep for myself";
+
+  function doStaff() {
+    // Second level scope
+
+    let myStaff = `can't touch this`;
+
+    console.log(innerData);
+    console.log(myStaff);
+    console.log(topScope);
+  }
+
+  return {
+    doStaff
+  };
+}
+
+const myClousure = main();
+myClousure.doStaff();
+console.log(myStaff); // ReferenceError: myStaff is not defined
+					</code></pre>
+    </section>
+    <section data-transition="none">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;" data-line-numbers="24">
+let topScope = `I'm Sitting on Top of the World`;
+
+function main() {
+  // First level scope
+  const innerData = "Some internal data I want to keep for myself";
+
+  function doStaff() {
+    // Second level scope
+
+    let myStaff = `can't touch this`;
+
+    console.log(innerData);
+    console.log(myStaff);
+    console.log(topScope);
+  }
+
+  return {
+    doStaff
+  };
+}
+
+const myClousure = main();
+myClousure.doStaff();
+console.log(myStaff); // ReferenceError: myStaff is not defined
+					</code></pre>
+    </section>
     <section>
-      <h2>Thanks</h2>
-      <h4>Questions?</h4>
+      <h2>Dziękuję</h2>
+      <blockquote>"Nie ma głupich pytań, są tylko te niezadane!"</blockquote>
       <p>
         <small>Kemal Erdem | @burnpiro</small><br/>
         <small><a href="https://erdem.pl">https://erdem.pl</a> <br/><a href="https://github.com/burnpiro">https://github.com/burnpiro</a></small><br/>
