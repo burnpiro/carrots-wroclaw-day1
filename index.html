@@ -209,9 +209,127 @@ document.myForm.addEventListener('submit', e => {
       <aside class="notes">
       </aside>
     </section>
-    <section>
+    <section data-transition="none">
       <h3>Opowieść o dwóch braciach</h3>
       <img src="assets/local-session-storage.png" class="plain">
+      <aside class="notes">
+      </aside>
+    </section>
+    <section data-transition="none">
+      <h3>LocalStorage</h3>
+      <img src="assets/local-focus.png" class="plain" style="max-height: 60vh;">
+      <pre><code class="hljs javascript" style="word-wrap: break-word;"> </code></pre>
+      <aside class="notes">
+      </aside>
+    </section>
+    <section data-transition="none">
+      <h3>LocalStorage - write</h3>
+      <img src="assets/local-save.png" class="plain" style="max-height: 60vh;">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;">
+localStorage.setItem("importantData", JSON.stringify(examQuestions));
+					</code></pre>
+      <aside class="notes">
+      </aside>
+    </section>
+    <section data-transition="none">
+      <h3>LocalStorage - write</h3>
+      <img src="assets/local-saved.png" class="plain" style="max-height: 60vh;">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;">
+localStorage.setItem("importantData", JSON.stringify(examQuestions));
+					</code></pre>
+      <aside class="notes">
+      </aside>
+    </section>
+    <section data-transition="none">
+      <h3>LocalStorage - read</h3>
+      <img src="assets/local-read.png" class="plain" style="max-height: 60vh;">
+      <pre><code class="hljs javascript" style="word-wrap: break-word;"> </code></pre>
+      <aside class="notes">
+      </aside>
+    </section>
+    <section data-transition="none">
+      <h3>LocalStorage - read</h3>
+      <img src="assets/local-read-process.png" class="plain" style="max-height: 60vh;">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;">
+const importantData = localStorage.getItem("importantData");
+					</code></pre>
+      <aside class="notes">
+      </aside>
+    </section>
+    <section data-transition="none">
+      <h3>LocalStorage - read</h3>
+      <img src="assets/local-read-processed.png" class="plain" style="max-height: 60vh;">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;">
+return JSON.parse(importantData);
+					</code></pre>
+      <aside class="notes">
+      </aside>
+    </section>
+    <section data-transition="none">
+      <h3>LocalStorage</h3>
+      <img src="assets/local-read-end.png" class="plain" style="max-height: 60vh;">
+      <pre><code class="hljs javascript" style="word-wrap: break-word;"> </code></pre>
+      <aside class="notes">
+      </aside>
+    </section>
+    <section data-transition="none">
+      <h3>SessionStorage</h3>
+      <img src="assets/session-party.png" class="plain" style="max-height: 60vh;">
+      <pre><code class="hljs javascript" style="word-wrap: break-word;"> </code></pre>
+      <aside class="notes">
+      </aside>
+    </section>
+    <section data-transition="none">
+      <h3>SessionStorage - write</h3>
+      <img src="assets/session-write.png" class="plain" style="max-height: 60vh;">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;">
+sessionStorage.setItem("importantData", JSON.stringify(examQuestions));
+					</code></pre>
+      <aside class="notes">
+      </aside>
+    </section>
+    <section data-transition="none">
+      <h3>SessionStorage</h3>
+      <img src="assets/session-drinking.png" class="plain" style="max-height: 60vh;">
+      <pre><code class="hljs javascript" style="word-wrap: break-word;"> </code></pre>
+      <aside class="notes">
+      </aside>
+    </section>
+    <section data-transition="none">
+      <h3>SessionStorage - read</h3>
+      <img src="assets/session-read.png" class="plain" style="max-height: 60vh;">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;">
+const importantData = sessionStorage.getItem("importantData");
+					</code></pre>
+      <aside class="notes">
+      </aside>
+    </section>
+    <section data-transition="none">
+      <h3>SessionStorage - read</h3>
+      <img src="assets/session-read-end.png" class="plain" style="max-height: 60vh;">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;">
+return JSON.parse(importantData);
+					</code></pre>
+      <aside class="notes">
+      </aside>
+    </section>
+    <section data-transition="none">
+      <h3>SessionStorage</h3>
+      <img src="assets/session-drunk.png" class="plain" style="max-height: 60vh;">
+      <pre><code class="hljs javascript" style="word-wrap: break-word;"> </code></pre>
+      <aside class="notes">
+      </aside>
+    </section>
+    <section data-transition="none">
+      <h3>SessionStorage - new session</h3>
+      <img src="assets/session-after-reset.png" class="plain" style="max-height: 50vh;">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;">
+const importantData = sessionStorage.getItem("importantData");
+return JSON.parse(importantData); // Error!!!!!
+					</code></pre>
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;">
+Uncaught SyntaxError: Unexpected token u in JSON at position 0
+					</code></pre>
       <aside class="notes">
       </aside>
     </section>
