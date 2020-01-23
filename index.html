@@ -718,7 +718,7 @@ const myClousure = main();
 let innerData = "outer scope";
 let myStaff = "outer scope";
 myClousure.doStaff();
-console.log(myStaff); // ReferenceError: myStaff is not defined
+console.log(myStaff); // "outer scope"
 					</code></pre>
     </section>
     <section data-transition="none">
@@ -748,7 +748,7 @@ const myClousure = main();
 let innerData = "outer scope";
 let myStaff = "outer scope";
 myClousure.doStaff();
-console.log(myStaff); // ReferenceError: myStaff is not defined
+console.log(myStaff); // "outer scope"
 					</code></pre>
     </section>
     <section data-transition="none">
@@ -778,7 +778,7 @@ const myClousure = main();
 let innerData = "outer scope";
 let myStaff = "outer scope";
 myClousure.doStaff();
-console.log(myStaff); // ReferenceError: myStaff is not defined
+console.log(myStaff); // "outer scope"
 					</code></pre>
     </section>
     <section data-transition="none">
@@ -808,7 +808,37 @@ const myClousure = main();
 let innerData = "outer scope";
 let myStaff = "outer scope";
 myClousure.doStaff();
-console.log(myStaff); // ReferenceError: myStaff is not defined
+console.log(myStaff); // "outer scope"
+					</code></pre>
+    </section>
+    <section data-transition="none">
+      <pre><code class="hljs javascript" data-trim style="word-wrap: break-word;" data-line-numbers="25">
+let topScope = `I'm Sitting on Top of the World`;
+
+function main() {
+  // First level scope
+  const innerData = "Some internal data I want to keep for myself";
+
+  function doStaff() {
+    // Second level scope
+
+    let myStaff = `can't touch this`;
+
+    console.log(innerData);
+    console.log(myStaff);
+    console.log(topScope);
+  }
+
+  return {
+    doStaff
+  };
+}
+
+const myClousure = main();
+let innerData = "outer scope";
+let myStaff = "outer scope";
+myClousure.doStaff();
+console.log(myStaff); // "outer scope"
 					</code></pre>
     </section>
     <section data-transition="none">
@@ -838,7 +868,7 @@ const myClousure = main();
 let innerData = "outer scope";
 let myStaff = "outer scope";
 myClousure.doStaff();
-console.log(myStaff); // ReferenceError: myStaff is not defined
+console.log(myStaff); // "outer scope"
 					</code></pre>
     </section>
     <section data-transition="none">
@@ -868,7 +898,7 @@ const myClousure = main();
 let innerData = "outer scope";
 let myStaff = "outer scope";
 myClousure.doStaff();
-console.log(myStaff); // ReferenceError: myStaff is not defined
+console.log(myStaff); // "outer scope"
 					</code></pre>
     </section>
     <section>
